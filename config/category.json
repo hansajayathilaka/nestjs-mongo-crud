@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/category.schema.json",
+  "title": "Category",
+  "type": "object",
+  "options": {
+    "createdAt": false,
+    "updatedAt": true,
+    "version": false
+  },
+  "properties": {
+    "id": {
+      "type": "integer",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255,
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255,
+      "required": false
+    },
+    "qrCode": {
+      "type": "ObjectId",
+      "minLength": 1,
+      "maxLength": 255,
+      "required": false,
+      "unique": true
+    },
+    "isDeleted": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "products": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "required": true
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 255,
+            "required": true
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 255,
+            "required": false
+          },
+          "price": {
+            "type": "number",
+            "required": true
+          },
+          "isDeleted": {
+            "type": "boolean",
+            "required": true,
+            "default": false
+          }
+        }
+      }
+    }
+  }
+}
