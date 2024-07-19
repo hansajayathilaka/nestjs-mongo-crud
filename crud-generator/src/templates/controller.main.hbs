@@ -1,0 +1,15 @@
+import { Controller } from "@nestjs/common";
+import { Crud, CrudController } from "@nestjsx/crud";
+
+import { {{capitalize title}} } from "./{{toLowerCase (singularize title)}}.schema";
+import { {{capitalize (pluralize title)}}Service } from "./{{toLowerCase (pluralize title)}}.service";
+
+@Crud({
+  model: {
+    type: {{capitalize title}},
+  },
+})
+@Controller("{{toLowerCase (pluralize title)}}")
+export class {{capitalize (pluralize title)}}Controller implements CrudController<{{capitalize title}}> {
+  constructor(public service: {{capitalize (pluralize title)}}Service) {}
+}

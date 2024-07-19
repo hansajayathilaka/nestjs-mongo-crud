@@ -1,0 +1,15 @@
+import { Injectable } from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
+import BaseService from '../utils/base.service';
+
+import { {{capitalize title}} } from "./{{toLowerCase (singularize title)}}.schema";
+
+@Injectable()
+export class {{capitalize (pluralize title)}}Service extends BaseService<{{capitalize (singularize title)}}> {
+  constructor(
+    @InjectModel({{capitalize (singularize title)}}.name) model: Model<{{capitalize (singularize title)}}>,
+  ) {
+    super(model);
+  }
+}

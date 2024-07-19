@@ -1,7 +1,8 @@
 import { Controller } from '@nestjs/common';
-import { Category } from './schemas/category.schema';
-import { CategoryService } from './category.service';
 import { Crud, CrudController } from '@nestjsx/crud';
+
+import { Category } from './category.schema';
+import { CategoryService } from './category.service';
 
 @Crud({
   model: {

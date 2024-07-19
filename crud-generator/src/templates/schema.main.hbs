@@ -1,0 +1,24 @@
+{{> imports }}
+
+
+@Schema({
+    timestamps: {
+        createdAt: {{options.createdAt}},
+        updatedAt: {{options.updatedAt}},
+    },
+    versionKey: {{options.version}},
+})
+export class {{title}} {
+    {{#each (objectToArray properties)}}
+        {{!-- Comment --}}
+        {{#each (deco key value) }}
+            @{{name}}( {{{json options}}} )
+        {{/each}}
+        {{key}}: {{{typeVal key value @root}}} {{#if (isEqual value.type "array")}} [] {{/if}};
+
+    {{/each}}
+}
+
+export type {{title}}Document = HydratedDocument<{{title}}>;
+
+export const {{title}}Schema = SchemaFactory.createForClass({{title}});

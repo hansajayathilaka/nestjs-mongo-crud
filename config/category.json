@@ -11,13 +11,17 @@
   "properties": {
     "id": {
       "type": "integer",
-      "required": true
+      "options": {
+        "required": true,
+        "unique": true
+      }
     },
     "name": {
       "type": "string",
       "minLength": 1,
       "maxLength": 255,
-      "required": true
+      "options": {
+      }
     },
     "description": {
       "type": "string",
@@ -36,39 +40,6 @@
       "type": "boolean",
       "required": true,
       "default": false
-    },
-    "products": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "required": true
-          },
-          "name": {
-            "type": "string",
-            "minLength": 1,
-            "maxLength": 255,
-            "required": true
-          },
-          "description": {
-            "type": "string",
-            "minLength": 1,
-            "maxLength": 255,
-            "required": false
-          },
-          "price": {
-            "type": "number",
-            "required": true
-          },
-          "isDeleted": {
-            "type": "boolean",
-            "required": true,
-            "default": false
-          }
-        }
-      }
     }
   }
 }
